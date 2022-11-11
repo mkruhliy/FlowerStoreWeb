@@ -7,6 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static flowershop.flowershopweb.flower.FlowerColor.BLUE;
+import static flowershop.flowershopweb.flower.FlowerColor.RED;
+import static flowershop.flowershopweb.flower.FlowerType.CHAMOMILE;
+import static flowershop.flowershopweb.flower.FlowerType.TULIP;
+
 @Getter
 public class FlowerBucket extends Item {
     private List<FlowerPack> flowerPacks = new ArrayList<FlowerPack>();
@@ -22,18 +27,32 @@ public class FlowerBucket extends Item {
         return price;
     }
 
-//    @Override
-//    public String getDescription() {
-//        return "FlowerBucket{" +
-//                "flowerPacks=" + flowerPacks.stream().map(pack -> pack.getDescription()).collect(Collectors.joining(",")) +
-//                '}';
-//    }
+    @Override
+    public String getDescription() {
+        return "FlowerBucket{" +
+                "flowerPacks=" + flowerPacks.stream().map(pack -> pack.getDescription()).collect(Collectors.joining(",")) +
+                '}';
+    }
 
-//    public static void main(String[] args) {
+    public boolean search(Flower flower) {
+//        ArrayList<FlowerBucket> matchingBuckets = new ArrayList<FlowerBucket>();
+        for (FlowerPack flowerPack: getFlowerPacks()) {
+            if (flowerPack.getFlower().equals(flower)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
 //        FlowerBucket flowerBucket = new FlowerBucket();
-//        flowerBucket.add(new FlowerPack(new Flower(TULIP, RED, 2.4, 10), 5));
-//        flowerBucket.add(new FlowerPack(new Flower(CHAMOMILE, BLUE, 1, 20), 3));
+//        Flower fl2 = new Flower(1, TULIP, RED, 2.4, 10);
+//        flowerBucket.add(new FlowerPack(fl2, 5));
+//        flowerBucket.add(new FlowerPack(new Flower(2, CHAMOMILE, BLUE, 1, 20), 3));
 //        System.out.println(flowerBucket.getPrice());
-//        System.out.println(flowerBucket.getDescription());
-//    }
+////        System.out.println(flowerBucket.getDescription());
+//        Flower fl = new Flower(1, TULIP, RED, 2.4, 10);
+//        System.out.println(flowerBucket.search(fl));
+//        System.out.println(fl.getDescription().equals(fl2.getDescription()));
+    }
 }

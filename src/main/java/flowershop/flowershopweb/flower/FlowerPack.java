@@ -14,13 +14,13 @@ public class FlowerPack extends Item {
     public double getPrice() {
         return flower.getPrice() * amount;
     }
-//    @Override
-//    public String getDescription() {
-//        return "FlowerPack{" +
-//                "flower=" + flower.getDescription() +
-//                ", amount=" + amount +
-//                '}';
-//    }
+    @Override
+    public String getDescription() {
+        return "FlowerPack{" +
+                "flower=" + flower.getDescription() +
+                ", amount=" + amount +
+                '}';
+    }
 
 //    public static void main(String[] args) {
 //        Item flowerpack = new FlowerPack(new Flower(TULIP, RED, 2.4, 10), 5);

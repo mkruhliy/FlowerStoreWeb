@@ -2,9 +2,7 @@ package flowershop.flowershopweb;
 
 import flowershop.flowershopweb.delivery.DHLDeliveryStrategy;
 import flowershop.flowershopweb.delivery.Delivery;
-import flowershop.flowershopweb.flower.Flower;
-import flowershop.flowershopweb.flower.FlowerBucket;
-import flowershop.flowershopweb.flower.FlowerPack;
+import flowershop.flowershopweb.flower.*;
 import flowershop.flowershopweb.items.Item;
 import flowershop.flowershopweb.payments.PayPalPaymentStrategy;
 import flowershop.flowershopweb.payments.Payment;
@@ -52,6 +50,7 @@ public class Order {
     public void removeItem(Item item) {
         this.items.remove(item);
     }
+
 
 //    public static void main(String[] args) {
 //

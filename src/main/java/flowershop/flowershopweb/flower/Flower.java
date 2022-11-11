@@ -22,20 +22,19 @@ public class Flower extends Item {
     @GeneratedValue
     private int id;
     private FlowerType flowertype;
-    private String color;
-//    private FlowerColor color;
+    private FlowerColor color;
     private double sepalLength;
     private double price;
 
-//    @Override
-//    public String getDescription() {
-//        return "Flower{" +
-//                "flowertype=" + flowertype +
-//                ", color=" + color +
-//                ", sepalLength=" + sepalLength +
-//                ", price=" + price +
-//                '}';
-//    }
+    @Override
+    public String getDescription() {
+        return "Flower{" +
+                "flowertype=" + flowertype +
+                ", color=" + color +
+                ", sepalLength=" + sepalLength +
+                ", price=" + price +
+                '}';
+    }
 
 //    public static void main(String[] args) {
 //        Item tulip = new Flower(TULIP, RED, 2.4, 10);

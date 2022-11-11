@@ -8,9 +8,8 @@ import java.util.List;
 @Service
 public class FlowerService {
 
+    private final FlowerRepository flowerRepository;
     @Autowired
-    private FlowerRepository flowerRepository;
-
     public FlowerService(FlowerRepository flowerRepository) {
         this.flowerRepository = flowerRepository;
     }
