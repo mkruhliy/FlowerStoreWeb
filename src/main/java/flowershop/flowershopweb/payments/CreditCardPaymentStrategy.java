@@ -1,12 +1,22 @@
 package flowershop.flowershopweb.payments;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class CreditCardPaymentStrategy implements Payment{
+    private String name;
+
+    public CreditCardPaymentStrategy(){
+        this.name = "Credit Card";
+    }
+
     @Override
-    public boolean pay(double price) {
+    public String pay(double price) {
         if (price>=0){
-            System.out.println("Credit card Payment success: your total: "+price);
-            return true;
+            return "Credit card Payment success: your total: "+price;
         }
-        return false;
+        return "Credit card Payment failure";
     }
 }

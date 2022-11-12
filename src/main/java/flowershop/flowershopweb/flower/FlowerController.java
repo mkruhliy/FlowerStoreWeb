@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-import static flowershop.flowershopweb.flower.FlowerColor.BLUE;
-import static flowershop.flowershopweb.flower.FlowerType.TULIP;
 
 @RestController
 @RequestMapping("api/v1/flower")
@@ -20,9 +18,7 @@ public class FlowerController {
 
     @GetMapping
     public List<Flower> getflowers() {
-        List<Flower> a = flowerService.getflowers();
-        System.out.println(a);
-        return a;
+        return flowerService.getflowers();
     }
 
     @PostMapping

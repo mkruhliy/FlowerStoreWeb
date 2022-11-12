@@ -1,12 +1,22 @@
 package flowershop.flowershopweb.payments;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class PayPalPaymentStrategy implements Payment{
+    private String name;
+
+    public PayPalPaymentStrategy(){
+        this.name = "PayPal";
+    }
+
     @Override
-    public boolean pay(double price) {
+    public String pay(double price) {
         if (price>=0){
-            System.out.println("PayPal Payment success: your total: "+price);
-            return true;
+            return "PayPal Payment success: your total: "+price;
         }
-        return false;
+        return "PayPal Payment failure";
     }
 }
