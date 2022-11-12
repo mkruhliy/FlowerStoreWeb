@@ -2,6 +2,8 @@ package flowershop.flowershopweb.items;
 
 public abstract class Item {
     private String description;
-    public abstract String getDescription();
+    public String getDescription(){
+        return this.description;
+    }
     public abstract double getPrice();
 }
