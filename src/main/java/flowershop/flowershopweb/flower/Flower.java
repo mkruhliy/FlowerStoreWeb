@@ -36,6 +36,10 @@ public class Flower extends Item {
                 '}';
     }
 
+    public String getColor() {
+        return color.toString();
+    }
+
 //    public static void main(String[] args) {
 //        Item tulip = new Flower(TULIP, RED, 2.4, 10);
 //        System.out.println(tulip.getDescription());

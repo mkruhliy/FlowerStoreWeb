@@ -39,11 +39,11 @@ public class Order {
         return price;
     }
 
-    public void processOrder(){
+    public boolean processOrder(){
         double price = calculateTotalPrice();
         System.out.println(payment.pay(price));
         System.out.println(delivery.deliver(items));
-
+        return true;
     }
 
     public void addItem(Item item) {
@@ -55,26 +55,26 @@ public class Order {
     }
 
 
-    public static void main(String[] args) {
-
-        FlowerBucket flowerBucket1 = new FlowerBucket();
-        FlowerBucket flowerBucket2 = new FlowerBucket();
-        flowerBucket1.add(new FlowerPack(new Flower(1, TULIP, RED, 2.4, 10), 5));
-        flowerBucket1.add(new FlowerPack(new Flower(2, TULIP, BLUE, 2.4, 10), 5));
-        flowerBucket2.add(new FlowerPack(new Flower(3, CHAMOMILE, RED, 1, 20), 3));
-        flowerBucket2.add(new FlowerPack(new Flower(4, CHAMOMILE, BLUE, 1, 20), 3));
-
-        Order order = new Order();
-        order.addItem(flowerBucket1);
-        order.addItem(flowerBucket2);
-
-
-        Payment payment = new PayPalPaymentStrategy();
-        order.setPaymentStrategy(payment);
-
-        Delivery delivery = new DHLDeliveryStrategy();
-        order.setDeliveryStrategy(delivery);
-
-        order.processOrder();
-    }
+//    public static void main(String[] args) {
+//
+//        FlowerBucket flowerBucket1 = new FlowerBucket();
+//        FlowerBucket flowerBucket2 = new FlowerBucket();
+//        flowerBucket1.add(new FlowerPack(new Flower(1, TULIP, RED, 2.4, 10), 5));
+//        flowerBucket1.add(new FlowerPack(new Flower(2, TULIP, BLUE, 2.4, 10), 5));
+//        flowerBucket2.add(new FlowerPack(new Flower(3, CHAMOMILE, RED, 1, 20), 3));
+//        flowerBucket2.add(new FlowerPack(new Flower(4, CHAMOMILE, BLUE, 1, 20), 3));
+//
+//        Order order = new Order();
+//        order.addItem(flowerBucket1);
+//        order.addItem(flowerBucket2);
+//
+//
+//        Payment payment = new PayPalPaymentStrategy();
+//        order.setPaymentStrategy(payment);
+//
+//        Delivery delivery = new DHLDeliveryStrategy();
+//        order.setDeliveryStrategy(delivery);
+//
+//        order.processOrder();
+//    }
 }
