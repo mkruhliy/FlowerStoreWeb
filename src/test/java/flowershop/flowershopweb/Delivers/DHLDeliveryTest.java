@@ -1,6 +1,7 @@
 package flowershop.flowershopweb.Delivers;
 
 import flowershop.flowershopweb.delivery.DHLDeliveryStrategy;
+import flowershop.flowershopweb.delivery.Delivery;
 import flowershop.flowershopweb.flower.Flower;
 import flowershop.flowershopweb.items.Item;
 import org.junit.jupiter.api.Assertions;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DHLDeliveryTest {
-    private DHLDeliveryStrategy dhlDeliveryStrategy;
+    private Delivery dhlDeliveryStrategy;
 
     @BeforeEach
     public void init() {
