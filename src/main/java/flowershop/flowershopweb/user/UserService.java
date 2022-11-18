@@ -7,8 +7,8 @@
 //
 //@Service
 //public class UserService {
-//    private final UserRepository userRepository;
 //
+//    private final UserRepository userRepository;
 //    @Autowired
 //    public UserService(UserRepository userRepository) {
 //        this.userRepository = userRepository;
@@ -16,5 +16,9 @@
 //
 //    public List<User> getUsers() {
 //        return userRepository.findAll();
+//    }
+//
+//    public void addUser(User user) {
+//        userRepository.save(user);
 //    }
 //}
