@@ -1,0 +1,12 @@
+GET https://fathomless-ocean-55314.herokuapp.com//api/v1/flower
+
+###
+POST https://fathomless-ocean-55314.herokuapp.com//api/v1/flower
+Content-Type: application/json
+
+{
+  "sepalLength": 10,
+  "color": "BLUE",
+  "price": 200,
+  "flowertype": "ROSE"
+}
